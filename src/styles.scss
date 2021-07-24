@@ -16,8 +16,9 @@ $font-normal: 14px;
 }
 router-outlet ~ * {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 250px);
     height: 100%;
+    right: 0;
 }
 
 html, body, app-root {

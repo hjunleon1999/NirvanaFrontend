@@ -1,8 +1,23 @@
 #sidebarWrap{
-    width: 100%;
+    width: 250px;
     height: 100%;
-
+    background-color: #fff;
     color:#553B76;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    //justify-content: center;
+    flex-direction: column;
+
+}
+#title{
+    margin-bottom: 20px;
+}
+
+.sidebarItem{
+    border-radius: 78px;
+    padding: 10px 30px;
+    margin: 20px 0;
 }
 
 .isActive{

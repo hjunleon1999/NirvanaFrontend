@@ -1,10 +1,19 @@
 @import "../assets/theme/colors";
 @import "../assets/theme/functions";
 
+
+
 #app-wrap{
     background: var(--mainBackground);
     font-size: 12px;
+    height:100%;
+    width: 100%;
+    display:flex;
 }
-app-sidebar{
+#app-sidebar{
     width:30%;
+}
+
+#right-section{
+    width:70%;
 }

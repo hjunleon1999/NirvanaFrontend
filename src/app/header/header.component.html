@@ -1,0 +1,87 @@
+<div class="navbar-wrap">
+    <div class="navbar">
+        <div class="weMentor-brand navbar-section">
+            <div class="weMentor-logo">
+                <svg width="55" height="63" viewBox="0 0 55 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.1094 0L54.1094 15.5896V46.7688L27.1094 62.3585L0.109375 46.7688V15.5896L27.1094 0Z" fill="white"/>
+                    <path d="M27.139 21.5074V0L0 15.8968V46.7552L27.139 62.0285V39.2743C30.1544 39.3782 34.3136 36.1573 34.3136 30.235C34.3136 24.001 30.1544 21.7152 27.139 21.5074Z" class="logo-color" />
+                </svg>
+            </div>
+            <div class="weMentor-brand-name">
+                Capstones
+            </div>
+        </div>
+        <div class="navbar-section" (mouseover)="handleButtonGroupMouseOver($event)" (mouseout)="handleButtonGroupMouseOut($event)">
+            <div class="button-group-1">
+                <div>
+                    <button [ngClass] = "{'is-active':primaryRoute=='home'}" data-role="home" (click)="goHome()">
+                        Home
+                    </button>
+                    
+                </div>
+                <div class="dropdown">
+                    <button [ngClass] = "{'is-active':primaryRoute=='messages'}" data-role="explored">
+                        Explore
+                    </button>
+                    <div class="dropdown-wrap"
+                        [ngStyle]="{'right':dropdownRight + 'px'}"
+                    >
+                        <div class="navbar-dropdown-menu">
+                            <div (click)="goToExploreProjects()">
+                                Projects
+                            </div>
+                            <div (click)="goToExplorePeople()">
+                                People
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button [ngClass] = "{'is-active':primaryRoute=='projects'}" data-role="projects">
+                    Jobs
+                </button>
+                <div class="dropdown">
+                    <button [ngClass] = "{'is-active':primaryRoute=='messages'}" data-role="explored">
+                        Notifications
+                    </button>
+                    <div class="dropdown-wrap"
+                        [ngStyle]="{'right':dropdownRight + 'px'}"
+                    >
+                        <div class="navbar-dropdown-menu">
+                            <div>
+                                None so far
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-account dropdown">
+                <div class="welcome-user">
+                    Hi, Carmen!
+                </div>
+                <div class="profile-pic-wrap">
+                    <div class="profile-pic">
+                        <img src="assets/png/beauty_1587214270960 2.png">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-wrap"
+                        [ngStyle]="{'right':dropdownRight + 'px'}"
+                    >
+                        <div class="navbar-dropdown-menu">
+                            <div (click)="goToProfile()">
+                                Profile
+                            </div>
+                            <div>
+                                Messages
+                            </div>
+                            <div>
+                                Settings
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

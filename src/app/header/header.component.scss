@@ -1,0 +1,156 @@
+//@import "../../../styles.scss";
+
+@import "../../assets/theme/colors";
+@import "../../assets/theme/functions";
+
+$navbar-height: 5%;   //56px
+$minion-blue: #bcdeff;
+$minion-yellow: #bcffc9;
+.navbar-wrap{
+    position:fixed;
+    top:0;
+    left:0;
+    height: $navbar-height;
+    width:100%;
+    user-select: none;
+}
+.navbar{
+    padding:8px;
+    border-radius: 0 0 32px 32px;
+    background-color: var(--navBackground);
+    color: white;
+    font-size:  1rem;
+    font-weight: 700;
+    height:100%;
+    display:flex;   
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+
+    box-shadow: 0px 6px 48px var(--navBacklighting);
+
+
+    & *{
+        align-items: center;
+    }
+    
+    .weMentor-logo{
+        height:100%;
+        width: 100%;
+        svg{
+            height:100%;
+            .logo-color{
+                fill:var(--logo-color);  
+            }
+        }
+    }
+    .navbar-section{
+        display: flex;
+        align-items: center;
+        height:100%;
+        
+    }
+    .weMentor-brand{
+        height: 80%;
+    }
+    
+    .button-group-1{
+        display:flex;
+        margin: 4px;
+        //border-right: 1px solid lighten($minion-blue,10%);
+        position:relative;
+        & > div{
+            position:relative;
+        }
+        button{
+            padding:12px;
+            border-radius: 8px;
+            background-color: rgba(0,0,0,0);
+            color: white;
+            font-size: inherit;  //cuz button got default font size
+            //font-size: 1.25rem; 
+            font-weight: 700;
+            transition: color 0.25s, background-color 0.25s;
+            border: none;
+            &.is-active{
+                //background-color: lighten($minion-blue,10%);
+                color: var(--active);
+            }
+            &:hover{
+                // background-color:lighten($minion-yellow,10%);
+                // color: $minion-blue;
+                cursor: pointer;
+            }
+            
+        }
+    }
+    .profile-account{
+        display:flex;
+        margin: 4px 8px;
+        position: relative;
+    }
+    .profile-pic-wrap{
+        height: $navbar-height;
+        width: $navbar-height;
+        padding: 8px;
+        cursor: pointer;
+        .profile-pic{
+            border-radius: 50%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color:white;
+            height: 100%;
+            img{
+                width:80%;
+                height:80%;
+                border-radius: 50%;
+            }
+        }
+    }
+    @keyframes navdropin {
+        100%{
+            top: calc(#{$navbar-height} - 8px);
+        }
+    }
+    .dropdown{
+        cursor:pointer;
+        &:hover .navbar-dropdown-menu{
+            display:block;
+        }
+        button{
+            margin-bottom: auto;
+        }
+        .dropdown-wrap{
+            padding-top: 16px;
+            position:absolute;
+            top:0;
+            left: 0;
+            height: 150px;
+        }
+    }
+    .navbar-dropdown-menu{
+        
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        position:absolute;
+        top:-90px;
+        animation: navdropin 0.25s ease-in-out;
+        animation-fill-mode: forwards;
+        //font-size: 16px;
+        color: black;
+        padding: 12px;
+        z-index: 1;
+        display:none;
+        border-radius: 8px;
+        & > div{
+            cursor:pointer;
+            user-select: none;
+            padding: 8px;
+            &:hover{
+                color: lighten($minion-blue,15%);
+            }
+        }
+        
+    }
+}

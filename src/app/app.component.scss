@@ -1,0 +1,10 @@
+@import "../assets/theme/colors";
+@import "../assets/theme/functions";
+
+#app-wrap{
+    background: var(--mainBackground);
+    font-size: 12px;
+}
+app-sidebar{
+    width:30%;
+}

@@ -1,0 +1,56 @@
+
+
+$notification-alert: red;
+
+//theme-based
+$juicy-red: #FF055F;
+$juicy-red-2: #F80068;
+$navy-blue: #091B31;
+$navy-blue-2: #1D1E29;
+$black-enough: #0C131A;
+$gentle-blue: #83B8EA;
+
+$fresh-green: #00F8CB;
+$cyan: #51EAFF;
+
+:root{
+    --black-enough: #0C131A;
+    --juicy-red: #FF055F;
+}
+
+.purple-theme {
+    --navBackground: #9c27b0;
+    --productTitle: #9c27b0;
+}
+
+.blue-theme {
+
+    --navBackground: #3f51b5;
+    --productTitle: #3f51b5;
+}
+
+.red-theme {
+    --navBackground: #e91e63;
+    --productTitle: #e91e63;
+}
+
+.violet-theme {
+    --navBackground: #673ab7;
+    --productTitle: #673ab7;
+}
+
+.dark-red-theme {
+    --navBackground: var(--black-enough);   // the $ variables wont work here for some reason
+    --navBacklighting: var(--juicy-red);
+    --logo-color: var(--juicy-red);
+    --mainBackground: #F2F5FF;
+    --active: var(--juicy-red);
+}
+
+$variables: (
+    --navBackground: var(--navBackground),
+    --navBacklighting: var(--navBacklighting),
+    --logo-color: var(--logo-color),
+    --mainBackground: var(--mainBackground),
+    --active: var(--active)
+);

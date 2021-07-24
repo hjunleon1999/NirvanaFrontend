@@ -1,0 +1,93 @@
+<div class="home">
+    <div class="app-left home-left-section">
+        <div class="easy-access-list">
+            <div class="">
+
+            </div>
+        </div>
+    </div>
+    <div class="app-mid feed-section">  
+        <div class="feed-maker">
+            <input value="" class="feed-maker-input" type="text" name="feed-maker-input" placeholder="Share a post">
+            <div class="feed-maker-button">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 9.3335V2.3335H11.6667V9.3335H18.6667V14.0002H11.6667V21.0002H7V14.0002H0V9.3335H7ZM14 23.3335V16.3335H21V9.3335H37.3333L41.6033 14.0002H49C51.5667 14.0002 53.6667 16.1002 53.6667 18.6668V46.6668C53.6667 49.2335 51.5667 51.3335 49 51.3335H11.6667C9.1 51.3335 7 49.2335 7 46.6668V23.3335H14ZM30.3333 44.3335C36.7733 44.3335 42 39.1068 42 32.6668C42 26.2268 36.7733 21.0002 30.3333 21.0002C23.8933 21.0002 18.6667 26.2268 18.6667 32.6668C18.6667 39.1068 23.8933 44.3335 30.3333 44.3335ZM22.8667 32.6668C22.8667 36.7968 26.2033 40.1335 30.3333 40.1335C34.4633 40.1335 37.8 36.7968 37.8 32.6668C37.8 28.5368 34.4633 25.2002 30.3333 25.2002C26.2033 25.2002 22.8667 28.5368 22.8667 32.6668Z" fill="#FFB905"/>
+                </svg>
+                <div> Photo</div>
+            </div>
+            <div class="feed-maker-button">
+                <svg width="59" height="34" viewBox="0 0 59 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M47.2 4.79187C47.2 3.52098 46.5784 2.30215 45.4719 1.4035C44.3655 0.504856 42.8648 0 41.3 0H5.9C4.33522 0 2.83453 0.504856 1.72807 1.4035C0.621605 2.30215 0 3.52098 0 4.79187V28.7512C0 30.0221 0.621605 31.2409 1.72807 32.1396C2.83453 33.0382 4.33522 33.5431 5.9 33.5431H41.3C42.8648 33.5431 44.3655 33.0382 45.4719 32.1396C46.5784 31.2409 47.2 30.0221 47.2 28.7512V20.7656L59 28.7512V4.79187L47.2 12.7775V4.79187ZM35.4 19.1675H26.55V26.3553H20.65V19.1675H11.8V14.3756H20.65V7.1878H26.55V14.3756H35.4V19.1675Z" fill="#FFB905"/>
+                </svg>
+                <div> Video</div>
+            </div>
+            <div class="feed-maker-button">
+                <svg width="46" height="36" viewBox="0 0 46 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40.8889 0H5.11111C2.3 0 0 1.79416 0 3.98703V31.8962C0 34.0891 2.3 35.8833 5.11111 35.8833H40.8889C43.7 35.8833 46 34.0891 46 31.8962V3.98703C46 1.79416 43.7 0 40.8889 0ZM28.1111 27.9092H10.2222V23.9222H28.1111V27.9092ZM35.7778 19.9352H10.2222V15.9481H35.7778V19.9352ZM35.7778 11.9611H10.2222V7.97406H35.7778V11.9611Z" fill="#3D67FF"/>
+                </svg>
+                <div> Write an Article</div>
+            </div>
+        </div>
+        <div class="feeds" *ngIf="feeds.length>0; else noFeed">
+            <div class = "poster" *ngFor="let feed of this.feeds; let i = index;" [attr.id]="i">
+                <div class="post-details">
+                    <div class="poster-pic">
+                        <img src={{feed.poster.pic}}>
+                    </div>
+                    <div class="poster-name">
+                        {{feed.poster.name}}
+                    </div>
+                    <div class="poster-title">
+                        {{feed.poster.title}}
+                    </div>
+                    <div class="poster-time">
+                        Posted {{feed.createdTimestamp | postedTime}}
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="post-text">
+                        {{feed.text}}
+                    </div>
+                    <div 
+                        *ngIf="feed.multimedia"
+                        class="multimedia-wrapper"
+                    >
+                        <div class="multimedia" 
+                            *ngFor="let multimedia of this.feeds.multimedias"
+                        >HELLO HELLo
+                            <img src="{{feed.multimedia.media}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #noFeed>
+            <div>Loading...+{{feeds.length}}</div>
+        </ng-template>
+
+        <ng-template class="feeds" *ngIf="feeds.length > 0; else noFeed">
+            <span style="background:pink;">HELLO PLEASE WORK</span>
+            <div class="post"
+                *ngFor="let poster of feeds"
+            >
+                
+            </div>
+        </ng-template>
+        <ng-template #noFeed>
+            Your feed's a little empty. Why not look explore <a href="javascript:void(0);" (click)="navigateToExplore($event)">our platform</a>?
+        </ng-template>
+    </div>
+    <div class="app-right home-right-section">
+        <div class="square-item" style="background-image:url('assets/png/random1.png')">
+            <div class="home-square-label">
+                Recommended For You
+            </div>
+        </div>
+        <div class="square-item" style="background-image:url('assets/png/random2.png')">
+            <div class="home-square-label">
+                Featured Projects
+            </div>
+        </div>
+    </div>
+</div>
